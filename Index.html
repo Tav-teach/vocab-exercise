@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Vocabulary Exercise</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background-color: #f7f9fc;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    input[type="text"] {
+      padding: 5px;
+      font-size: 16px;
+    }
+    button {
+      padding: 5px 10px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    .result {
+      margin-top: 5px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h2>Fill in the Blank</h2>
+
+  <div class="question">
+    1. She was very ______ when she received the good news.
+    <input type="text" id="answer1">
+    <button onclick="checkAnswer('answer1', 'happy', 'result1')">Check</button>
+    <div id="result1" class="result"></div>
+  </div>
+
+  <div class="question">
+    2. The sun rises in the ______.
+    <input type="text" id="answer2">
+    <button onclick="checkAnswer('answer2', 'east', 'result2')">Check</button>
+    <div id="result2" class="result"></div>
+  </div>
+
+  <script>
+    function checkAnswer(inputId, correctAnswer, resultId) {
+      const userAnswer = document.getElementById(inputId).value.trim().toLowerCase();
+      const resultDiv = document.getElementById(resultId);
+      if (userAnswer === correctAnswer) {
+        resultDiv.textContent = "Correct!";
+        resultDiv.style.color = "green";
+      } else {
+        resultDiv.textContent = "Try again.";
+        resultDiv.style.color = "red";
+      }
+    }
+  </script>
+</body>
+</html>
