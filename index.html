@@ -1,60 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Vocabulary Exercise</title>
+  <meta charset="UTF-8" />
+  <title>Labor Law Vocabulary</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      padding: 20px;
-      background-color: #f7f9fc;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to right, #f2f2f2, #dbe9f4);
+      padding: 30px;
+      text-align: center;
     }
+
+    h1 {
+      color: #2c3e50;
+      animation: pulse 1.5s infinite alternate;
+    }
+
+    @keyframes pulse {
+      from { transform: scale(1); }
+      to { transform: scale(1.03); }
+    }
+
     .question {
-      margin-bottom: 20px;
+      background: #ffffff;
+      border: 2px solid #3498db;
+      border-radius: 15px;
+      padding: 20px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 450px;
+      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.1);
     }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      margin-bottom: 10px;
+    }
+
     input[type="text"] {
-      padding: 5px;
+      padding: 10px;
+      width: 60%;
       font-size: 16px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
     }
+
     button {
-      padding: 5px 10px;
-      margin-left: 10px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      margin: 8px;
+      border-radius: 8px;
+      font-weight: bold;
       cursor: pointer;
     }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
     .result {
-      margin-top: 5px;
       font-weight: bold;
+      margin-top: 10px;
     }
   </style>
 </head>
 <body>
-  <h2>Fill in the Blank</h2>
+  <h1>Labor Law Vocabulary</h1>
 
+  <!-- Question 1 -->
   <div class="question">
-    1. She was very ______ when she received the good news.
+    <img src="https://cdn.pixabay.com/photo/2017/06/01/21/13/workplace-2364088_960_720.jpg" alt="Workplace Rights">
+    <p>1. All employees have the right to a safe ______ environment.</p>
+    <button onclick="playAudio('audio1')">🔊</button>
     <input type="text" id="answer1">
-    <button onclick="checkAnswer('answer1', 'happy', 'result1')">Check</button>
+    <button onclick="checkAnswer('answer1', 'working', 'result1')">Check</button>
     <div id="result1" class="result"></div>
+    <audio id="audio1" src="https://www.englishclub.com/images/mp3/working.mp3"></audio>
   </div>
 
+  <!-- Question 2 -->
   <div class="question">
-    2. The sun rises in the ______.
+    <img src="https://cdn.pixabay.com/photo/2016/03/27/22/16/contract-1284244_960_720.jpg" alt="Contract">
+    <p>2. A legal ______ defines the terms of employment.</p>
+    <button onclick="playAudio('audio2')">🔊</button>
     <input type="text" id="answer2">
-    <button onclick="checkAnswer('answer2', 'east', 'result2')">Check</button>
+    <button onclick="checkAnswer('answer2', 'contract', 'result2')">Check</button>
     <div id="result2" class="result"></div>
+    <audio id="audio2" src="https://www.englishclub.com/images/mp3/contract.mp3"></audio>
+  </div>
+
+  <!-- Question 3 -->
+  <div class="question">
+    <img src="https://cdn.pixabay.com/photo/2016/06/15/15/48/discussion-1454148_960_720.jpg" alt="Negotiation">
+    <p>3. Unions often ______ with employers for better wages.</p>
+    <button onclick="playAudio('audio3')">🔊</button>
+    <input type="text" id="answer3">
+    <button onclick="checkAnswer('answer3', 'negotiate', 'result3')">Check</button>
+    <div id="result3" class="result"></div>
+    <audio id="audio3" src="https://www.englishclub.com/images/mp3/negotiate.mp3"></audio>
   </div>
 
   <script>
     function checkAnswer(inputId, correctAnswer, resultId) {
       const userAnswer = document.getElementById(inputId).value.trim().toLowerCase();
       const resultDiv = document.getElementById(resultId);
-      if (userAnswer === correctAnswer) {
+      if (userAnswer === correctAnswer.toLowerCase()) {
         resultDiv.textContent = "Correct!";
         resultDiv.style.color = "green";
       } else {
         resultDiv.textContent = "Try again.";
         resultDiv.style.color = "red";
       }
+    }
+
+    function playAudio(audioId) {
+      document.getElementById(audioId).play();
     }
   </script>
 </body>
